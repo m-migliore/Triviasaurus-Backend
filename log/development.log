@@ -991,3 +991,866 @@ Migrating to AddDefaultAnswerToRounds (20181231154850)
   ↳ bin/rails:9
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:9
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:54:28 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/miggle311/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.92ms)
+Completed 200 OK in 117ms (Views: 19.6ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:28:02 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:28:10 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (1.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:28:10.481004"], ["updated_at", "2018-12-31 16:28:10.481004"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.22ms)
+Completed 202 Accepted in 161ms (Views: 4.3ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:28:24 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.56ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:28:30 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:28:30.009598"], ["updated_at", "2018-12-31 16:28:30.009598"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 202 Accepted in 6ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:28:43 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:5
+No serializer found for resource: #<Game id: 1, user_id: 1, created_at: "2018-12-31 16:28:10", updated_at: "2018-12-31 16:28:10">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Game::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:29:31 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.52ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:29:35 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:29:35.953489"], ["updated_at", "2018-12-31 16:29:35.953489"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.15ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:30:08 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.59ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:30:11 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:30:11.143417"], ["updated_at", "2018-12-31 16:30:11.143417"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:33:15 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:5
+No serializer found for resource: #<Game id: 1, user_id: 1, created_at: "2018-12-31 16:28:10", updated_at: "2018-12-31 16:28:10">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Game::ActiveRecord_Relation (0.65ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:34:36 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:34:36.426804"], ["updated_at", "2018-12-31 16:34:36.426804"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.2ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:34:49 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.56ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:34:52 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:34:52.951159"], ["updated_at", "2018-12-31 16:34:52.951159"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:38:04 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:38:09 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:38:09.075786"], ["updated_at", "2018-12-31 16:38:09.075786"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 202 Accepted in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:39:32 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:5
+No serializer found for resource: #<Game id: 1, user_id: 1, created_at: "2018-12-31 16:28:10", updated_at: "2018-12-31 16:28:10">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Game::ActiveRecord_Relation (1.25ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:39:47 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.48ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:39:51 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:39:51.900081"], ["updated_at", "2018-12-31 16:39:51.900081"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.21ms)
+Completed 202 Accepted in 5ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:41:08 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:41:11 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:41:11.165700"], ["updated_at", "2018-12-31 16:41:11.165700"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:43:34 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.68ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:43:37 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:43:37.781376"], ["updated_at", "2018-12-31 16:43:37.781376"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 202 Accepted in 5ms (Views: 0.6ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:44:18 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.75ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:45:51 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:45:51.695436"], ["updated_at", "2018-12-31 16:45:51.695436"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 202 Accepted in 6ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:48:04 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.69ms)
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:49:56 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:49:56.432310"], ["updated_at", "2018-12-31 16:49:56.432310"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 202 Accepted in 6ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:50:00 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.65ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:50:01 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:50:01.268967"], ["updated_at", "2018-12-31 16:50:01.268967"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:51:52 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.59ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:51:53 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.5ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:51:53.111881"], ["updated_at", "2018-12-31 16:51:53.111881"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 202 Accepted in 5ms (Views: 0.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:52:51 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.87ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:52:51 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.4ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:52:51.925395"], ["updated_at", "2018-12-31 16:52:51.925395"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 202 Accepted in 6ms (Views: 0.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:55:48 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.63ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:55:49 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:55:49.676311"], ["updated_at", "2018-12-31 16:55:49.676311"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 202 Accepted in 7ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 11:58:30 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.61ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 11:58:30 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 16:58:30.706456"], ["updated_at", "2018-12-31 16:58:30.706456"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 202 Accepted in 6ms (Views: 0.5ms | ActiveRecord: 1.7ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.5ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:05:09 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/miggle311/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.71ms)
+Completed 200 OK in 24ms (Views: 14.2ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:05:11 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:05:11.951802"], ["updated_at", "2018-12-31 17:05:11.951802"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.19ms)
+Completed 202 Accepted in 30ms (Views: 3.3ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:06:40 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:06:41 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:06:41.017189"], ["updated_at", "2018-12-31 17:06:41.017189"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 202 Accepted in 6ms (Views: 0.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:08:14 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.53ms)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:08:15 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:08:15.152941"], ["updated_at", "2018-12-31 17:08:15.152941"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.18ms)
+Completed 202 Accepted in 6ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:10:06 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.6ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:10:07 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:10:07.490961"], ["updated_at", "2018-12-31 17:10:07.490961"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.16ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:10:50 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.57ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:10:51 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:10:51.160915"], ["updated_at", "2018-12-31 17:10:51.160915"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.24ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:12:15 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.52ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:12:16 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.3ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:12:16.472215"], ["updated_at", "2018-12-31 17:12:16.472215"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.17ms)
+Completed 202 Accepted in 6ms (Views: 0.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:12:44 -0500
+Processing by Api::V1::GamesController#index as HTML
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT "games".* FROM "games"[0m
+  ↳ app/controllers/api/v1/games_controller.rb:5
+No serializer found for resource: #<Game id: 1, user_id: 1, created_at: "2018-12-31 16:28:10", updated_at: "2018-12-31 16:28:10">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Game::ActiveRecord_Relation (2.75ms)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:12:55 -0500
+  
+SyntaxError (/Users/miggle311/flatiron/Mod3/final-project/triviasaurus-backend/app/controllers/api/v1/rounds_controller.rb:26: syntax error, unexpected ',', expecting ')'
+...nswer_2, :incorrect_answer_3, ,:answer, :correct)
+...                               ^
+/Users/miggle311/flatiron/Mod3/final-project/triviasaurus-backend/app/controllers/api/v1/rounds_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/api/v1/rounds_controller.rb:26: syntax error, unexpected ',', expecting ')'
+app/controllers/api/v1/rounds_controller.rb:32: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:00 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/miggle311/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::RoundsController#index as HTML
+  [1m[36mRound Load (1.3ms)[0m  [1m[34mSELECT "rounds".* FROM "rounds"[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.14ms)
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 12:14:06 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.68ms)
+Completed 200 OK in 23ms (Views: 14.2ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/api/v1/games" for 127.0.0.1 at 2018-12-31 12:14:07 -0500
+Processing by Api::V1::GamesController#create as JSON
+  Parameters: {"user_id"=>1, "game"=>{"user_id"=>1}}
+Unpermitted parameter: :game
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[36mGame Create (0.6ms)[0m  [1m[32mINSERT INTO "games" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2018-12-31 17:14:07.515370"], ["updated_at", "2018-12-31 17:14:07.515370"]]
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/games_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Game (0.22ms)
+Completed 202 Accepted in 29ms (Views: 3.3ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:15 -0500
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"What is the main character of Metal Gear Solid 2?", "correct_answer"=>"Raiden", "incorrect_answer_1"=>"Solidus Snake", "incorrect_answer_2"=>"Big Boss", "incorrect_answer_3"=>"Venom Snake", "correct"=>false, "round"=>{"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"What is the main character of Metal Gear Solid 2?", "correct_answer"=>"Raiden", "incorrect_answer_1"=>"Solidus Snake", "incorrect_answer_2"=>"Big Boss", "incorrect_answer_3"=>"Venom Snake", "correct"=>false}}
+Started POST "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:15 -0500
+Started POST "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:15 -0500
+Unpermitted parameter: :round
+Started POST "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:15 -0500
+Started POST "/api/v1/rounds" for 127.0.0.1 at 2018-12-31 12:14:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mGame Load (1.0ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mRound Create (0.9ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id", "category", "difficulty", "question", "correct_answer", "incorrect_answer_1", "incorrect_answer_2", "incorrect_answer_3", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 24], ["category", "Entertainment: Video Games"], ["difficulty", "medium"], ["question", "What is the main character of Metal Gear Solid 2?"], ["correct_answer", "Raiden"], ["incorrect_answer_1", "Solidus Snake"], ["incorrect_answer_2", "Big Boss"], ["incorrect_answer_3", "Venom Snake"], ["correct", false], ["created_at", "2018-12-31 17:14:15.421790"], ["updated_at", "2018-12-31 17:14:15.421790"]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Round (0.32ms)
+Completed 202 Accepted in 30ms (Views: 3.2ms | ActiveRecord: 5.5ms)
+
+
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"In Grand Theft Auto: V, what wanted level does the player receive if they enter Zancudo Army Base north of Los Santos?", "correct_answer"=>"4", "incorrect_answer_1"=>"3", "incorrect_answer_2"=>"5", "incorrect_answer_3"=>"1", "correct"=>false, "round"=>{"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"In Grand Theft Auto: V, what wanted level does the player receive if they enter Zancudo Army Base north of Los Santos?", "correct_answer"=>"4", "incorrect_answer_1"=>"3", "incorrect_answer_2"=>"5", "incorrect_answer_3"=>"1", "correct"=>false}}
+Processing by Api::V1::RoundsController#create as JSON
+Processing by Api::V1::RoundsController#create as JSON
+Unpermitted parameter: :round
+  Parameters: {"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"When was Chapter 1 of the Source Engine mod &quot;Underhell&quot; released?", "correct_answer"=>"September 1st, 2013", "incorrect_answer_1"=>"March 3rd, 2011", "incorrect_answer_2"=>"September 12th, 2013", "incorrect_answer_3"=>"October 2nd, 2012", "correct"=>false, "round"=>{"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"When was Chapter 1 of the Source Engine mod &quot;Underhell&quot; released?", "correct_answer"=>"September 1st, 2013", "incorrect_answer_1"=>"March 3rd, 2011", "incorrect_answer_2"=>"September 12th, 2013", "incorrect_answer_3"=>"October 2nd, 2012", "correct"=>false}}
+Processing by Api::V1::RoundsController#create as JSON
+  Parameters: {"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"If you play the Super Mario RPG and nap in a rented hotel room, you will wake up next to what familiar looking character?", "correct_answer"=>"Link", "incorrect_answer_1"=>"Wario", "incorrect_answer_2"=>"Q*bert", "incorrect_answer_3"=>"Solid Snake", "correct"=>false, "round"=>{"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"medium", "question"=>"If you play the Super Mario RPG and nap in a rented hotel room, you will wake up next to what familiar looking character?", "correct_answer"=>"Link", "incorrect_answer_1"=>"Wario", "incorrect_answer_2"=>"Q*bert", "incorrect_answer_3"=>"Solid Snake", "correct"=>false}}
+Unpermitted parameter: :round
+  Parameters: {"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"hard", "question"=>"Which game was exclusive to Dreamcast?", "correct_answer"=>"Pen Pen TriIcelon", "incorrect_answer_1"=>"Sylvester &amp; Tweety in Cagey Capers", "incorrect_answer_2"=>"Perfect Dark", "incorrect_answer_3"=>"Tetrisphere", "correct"=>false, "round"=>{"game_id"=>24, "category"=>"Entertainment: Video Games", "difficulty"=>"hard", "question"=>"Which game was exclusive to Dreamcast?", "correct_answer"=>"Pen Pen TriIcelon", "incorrect_answer_1"=>"Sylvester &amp; Tweety in Cagey Capers", "incorrect_answer_2"=>"Perfect Dark", "incorrect_answer_3"=>"Tetrisphere", "correct"=>false}}
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+Unpermitted parameter: :round
+Unpermitted parameter: :round
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mGame Load (1.9ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mGame Load (1.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mGame Load (1.2ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mGame Load (1.3ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mRound Create (2.2ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id", "category", "difficulty", "question", "correct_answer", "incorrect_answer_1", "incorrect_answer_2", "incorrect_answer_3", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 24], ["category", "Entertainment: Video Games"], ["difficulty", "medium"], ["question", "In Grand Theft Auto: V, what wanted level does the player receive if they enter Zancudo Army Base north of Los Santos?"], ["correct_answer", "4"], ["incorrect_answer_1", "3"], ["incorrect_answer_2", "5"], ["incorrect_answer_3", "1"], ["correct", false], ["created_at", "2018-12-31 17:14:15.455156"], ["updated_at", "2018-12-31 17:14:15.455156"]]
+  [1m[36mRound Create (1.2ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id", "category", "difficulty", "question", "correct_answer", "incorrect_answer_1", "incorrect_answer_2", "incorrect_answer_3", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 24], ["category", "Entertainment: Video Games"], ["difficulty", "hard"], ["question", "Which game was exclusive to Dreamcast?"], ["correct_answer", "Pen Pen TriIcelon"], ["incorrect_answer_1", "Sylvester &amp; Tweety in Cagey Capers"], ["incorrect_answer_2", "Perfect Dark"], ["incorrect_answer_3", "Tetrisphere"], ["correct", false], ["created_at", "2018-12-31 17:14:15.456505"], ["updated_at", "2018-12-31 17:14:15.456505"]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mRound Create (1.5ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id", "category", "difficulty", "question", "correct_answer", "incorrect_answer_1", "incorrect_answer_2", "incorrect_answer_3", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 24], ["category", "Entertainment: Video Games"], ["difficulty", "medium"], ["question", "If you play the Super Mario RPG and nap in a rented hotel room, you will wake up next to what familiar looking character?"], ["correct_answer", "Link"], ["incorrect_answer_1", "Wario"], ["incorrect_answer_2", "Q*bert"], ["incorrect_answer_3", "Solid Snake"], ["correct", false], ["created_at", "2018-12-31 17:14:15.457334"], ["updated_at", "2018-12-31 17:14:15.457334"]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[36mRound Create (0.9ms)[0m  [1m[32mINSERT INTO "rounds" ("game_id", "category", "difficulty", "question", "correct_answer", "incorrect_answer_1", "incorrect_answer_2", "incorrect_answer_3", "correct", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["game_id", 24], ["category", "Entertainment: Video Games"], ["difficulty", "medium"], ["question", "When was Chapter 1 of the Source Engine mod &quot;Underhell&quot; released?"], ["correct_answer", "September 1st, 2013"], ["incorrect_answer_1", "March 3rd, 2011"], ["incorrect_answer_2", "September 12th, 2013"], ["incorrect_answer_3", "October 2nd, 2012"], ["correct", false], ["created_at", "2018-12-31 17:14:15.458583"], ["updated_at", "2018-12-31 17:14:15.458583"]]
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Round (0.38ms)
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+  ↳ app/controllers/api/v1/rounds_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Round (0.29ms)
+Completed 202 Accepted in 29ms (Views: 1.9ms | ActiveRecord: 10.8ms)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Round (0.27ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Round (0.26ms)
+Completed 202 Accepted in 26ms (Views: 2.2ms | ActiveRecord: 8.1ms)
+
+
+Completed 202 Accepted in 28ms (Views: 1.6ms | ActiveRecord: 10.1ms)
+
+
+Completed 202 Accepted in 29ms (Views: 1.1ms | ActiveRecord: 11.4ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGame Load (0.4ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 11]]
+  [1m[36mGame Load (0.3ms)[0m  [1m[34mSELECT "games".* FROM "games" WHERE "games"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGame Load (0.6ms)[0m  [1m[34mSELECT  "games".* FROM "games" WHERE "games"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  [1m[36mRound Load (0.4ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = $1 LIMIT $2[0m  [["game_id", 24], ["LIMIT", 11]]
+  [1m[36mRound Load (0.6ms)[0m  [1m[34mSELECT  "rounds".* FROM "rounds" WHERE "rounds"."game_id" = $1 ORDER BY "rounds"."id" ASC LIMIT $2[0m  [["game_id", 24], ["LIMIT", 1]]

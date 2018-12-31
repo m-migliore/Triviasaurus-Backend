@@ -23,7 +23,7 @@ class Api::V1::RoundsController < ApplicationController
   private
 
   def round_params
-    params.permit(:game_id, :category, :difficulty, :question, :correct_answer, :incorrect_answer_1, :incorrect_answer_2, :incorrect_answer_3, ,:answer, :correct)
+    params.permit(:game_id, :category, :difficulty, :question, :correct_answer, :incorrect_answer_1, :incorrect_answer_2, :incorrect_answer_3, :answer, :correct)
   end
 
   def round_game

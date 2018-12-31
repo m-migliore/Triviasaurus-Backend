@@ -755,3 +755,160 @@ No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: 
 Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:11:31 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/miggle311/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.33ms)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:13:51 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/miggle311/.rvm/gems/ruby-2.3.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.3ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:13:55 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.15ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:14:06 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.19ms)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:14:18 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.17ms)
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:14:32 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.22ms)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:18:38 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.19ms)
+Completed 200 OK in 27ms (Views: 12.6ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:18:38 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"test", "user"=>{"username"=>"test"}}
+Unpermitted parameter: :user
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[36mUser Create (5.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "test"], ["created_at", "2018-12-31 15:18:38.745845"], ["updated_at", "2018-12-31 15:18:38.745845"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.32ms)
+Completed 202 Accepted in 55ms (Views: 43.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:18:56 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.32ms)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:20:33 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.37ms)
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:20:33 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"tester", "user"=>{"username"=>"tester"}}
+Unpermitted parameter: :user
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "tester"], ["created_at", "2018-12-31 15:20:33.364446"], ["updated_at", "2018-12-31 15:20:33.364446"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 202 Accepted in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:21:19 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.39ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:21:30 -0500
+Processing by Api::V1::UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:5
+No serializer found for resource: #<User id: 1, username: "Nazgul", created_at: "2018-12-27 18:27:26", updated_at: "2018-12-27 18:27:26">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with User::ActiveRecord_Relation (0.4ms)
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/users" for 127.0.0.1 at 2018-12-31 10:21:30 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"username"=>"newguy", "user"=>{"username"=>"newguy"}}
+Unpermitted parameter: :user
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("username", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["username", "newguy"], ["created_at", "2018-12-31 15:21:30.854192"], ["updated_at", "2018-12-31 15:21:30.854192"]]
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:10
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 202 Accepted in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms)
+
+

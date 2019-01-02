@@ -30,7 +30,7 @@ class Api::V1::RoundsController < ApplicationController
     params.permit(:game_id, :category, :difficulty, :question, :correct_answer, :incorrect_answer_1, :incorrect_answer_2, :incorrect_answer_3, :answer, :correct)
   end
 
-  def round_game
+  def find_round
     @round = Round.find(params[:id])
   end
 end

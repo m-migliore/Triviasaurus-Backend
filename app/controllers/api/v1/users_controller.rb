@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :update]
+  before_action :find_user, only: [:show, :update, :stats]
   def index
     @users = User.all
     render json: @users
@@ -22,6 +22,17 @@ class Api::V1::UsersController < ApplicationController
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
+  end
+
+
+  def stats
+    @userStats = {
+      id: @user.id,
+      username: @user.username,
+      totalWinPercentage: @user.winPercentage,
+      categoryStats: @user.categoryStats
+    }
+    render json: @userStats, status: :accepted
   end
 
   private

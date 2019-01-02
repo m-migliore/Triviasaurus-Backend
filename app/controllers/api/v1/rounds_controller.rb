@@ -1,8 +1,12 @@
 class Api::V1::RoundsController < ApplicationController
-  before_action :find_round, only: [:update]
+  before_action :find_round, only: [:show, :update]
   def index
     @rounds = Round.all
     render json: @rounds
+  end
+
+  def show
+    render json: @round , status: :accepted
   end
 
   def create

@@ -29,7 +29,14 @@ class Api::V1::UsersController < ApplicationController
     @userStats = {
       id: @user.id,
       username: @user.username,
-      totalWinPercentage: @user.winPercentage,
+      totalStats: @user.totalStats,
+      # totalWinPercentage: @user.winPercentage,
+      # totalEasyTotal: @user.difficultyPlayed(@user.allRounds,"easy").length,
+      # totalEasyWins: @user.difficultyWon(@user.allRounds,"easy").length,
+      # totalMediumTotal: @user.difficultyPlayed(@user.allRounds, "medium").length,
+      # totalMediumWins: @user.difficultyWon(@user.allRounds,"medium").length,
+      # totalHardTotal:@user. difficultyPlayed(@user.allRounds,"hard").length,
+      # totalHardWins: @user.difficultyWon(@user.allRounds,"hard").length,
       categoryStats: @user.categoryStats
     }
     render json: @userStats, status: :accepted

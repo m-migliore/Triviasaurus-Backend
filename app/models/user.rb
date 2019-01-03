@@ -11,14 +11,6 @@ class User < ApplicationRecord
     allRounds.select{|round| round.correct}
   end
 
-  # def winPercentage
-  #   correctRounds = allRounds.select{|round| round.correct}
-  #   ((correctRounds.length / allRounds.length.to_f) * 100).to_i
-  # end
-
-  # def winPercentage(wins, total)
-  #   ((wins.length / total.length.to_f) * 100).to_i
-  # end
   def winPercentage(wins, total)
     if total.length > 0
       ((wins.length / total.length.to_f) * 100).to_i

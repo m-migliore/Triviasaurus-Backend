@@ -54,8 +54,6 @@ class User < ApplicationRecord
     statsByCategory
   end
 
-
-
   def totalStats
     stats = {
       total: self.allRounds.length,
@@ -72,4 +70,45 @@ class User < ApplicationRecord
       hardPercentage: self.winPercentage(self.difficultyWon(self.allRounds,"hard"), self.difficultyPlayed(self.allRounds,"hard")),
     }
   end
+
+  # ELO Methods
+  # constant can be anything, using 10 for now
+  #(Wins + constant * Average Win % of all players) / (Wins + Losses + constant)
+  def self.averageWinPercentage
+    winPercentages = self.all.map do |user|
+      user.winPercentage(user.allWins, user.allRounds)
+    end
+    winPercentages.reduce(:+) / winPercentages.length.to_f
+  end
+
+  def elo
+    total = self.allRounds.length
+    wins = self.allWins.length
+    if total > 0
+      ((wins + 10) * User.averageWinPercentage) / (total + 10)
+    else
+      0
+    end
+  end
+
+  def self.eloList
+    list = {}
+    User.all.each do |user|
+      list[user] = {
+        id: user.id,
+        username: user.username,
+        elo: user.elo,
+        total: user.allRounds.length,
+        wins: user.allWins.length,
+        winPercentage: user.winPercentage(user.allWins, user.allRounds)
+      }
+    end
+    list
+  end
+
+  def self.sortedEloList
+    sortedList = self.eloList.sort {|a,b| b.last[:elo] <=> a.last[:elo]}
+    sortedList.map {|user| user.last}
+  end
+
 end

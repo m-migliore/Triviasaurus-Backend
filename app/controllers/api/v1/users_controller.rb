@@ -33,12 +33,11 @@ class Api::V1::UsersController < ApplicationController
       categoryStats: @user.categoryStats
     }
     render json: @userStats, status: :accepted
-  end
+  end#
 
   def leaderboard
-    # @users = User.all
-    # render json: @users
-    render json: "sup"
+    @eloSorted = User.sortedEloList
+    render json: @eloSorted, status: :accepted
   end
 
   private

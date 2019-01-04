@@ -36,8 +36,19 @@ class Api::V1::UsersController < ApplicationController
   end#
 
   def leaderboard
-    @eloSorted = User.sortedEloList
-    render json: @eloSorted, status: :accepted
+    # @sortedUsers = {
+    #   elo: User.sortedEloList,
+    #   wins: User.sortedWinsList,
+    #   total: User.sortedTotalList,
+    #   percentage: User.sortedPercentageList
+    # }
+    @sortedUsers = {
+      elo: User.sortedUserList(:elo),
+      wins: User.sortedUserList(:wins),
+      total: User.sortedUserList(:total),
+      percentage: User.sortedUserList(:winPercentage)
+    }
+    render json: @sortedUsers, status: :accepted
   end
 
   private

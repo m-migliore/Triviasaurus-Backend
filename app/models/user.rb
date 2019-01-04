@@ -85,7 +85,7 @@ class User < ApplicationRecord
     total = self.allRounds.length
     wins = self.allWins.length
     if total > 0
-      ((wins + 10) * User.averageWinPercentage) / (total + 10)
+      (((wins + 10) * User.averageWinPercentage) / (total + 10)).round(2)
     else
       0
     end
@@ -106,9 +106,9 @@ class User < ApplicationRecord
     list
   end
 
-  def self.sortedEloList
-    sortedList = self.eloList.sort {|a,b| b.last[:elo] <=> a.last[:elo]}
+
+  def self.sortedUserList(stat)
+    sortedList = self.eloList.sort {|a,b| b.last[stat] <=> a.last[stat]}
     sortedList.map {|user| user.last}
   end
-
 end

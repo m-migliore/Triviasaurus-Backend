@@ -36,18 +36,22 @@ class Api::V1::UsersController < ApplicationController
   end#
 
   def leaderboard
+    case params[:order]
+      when "elo"
+        @sortedUsers = User.sortedUserList(:elo)
+      when "wins"
+        @sortedUsers = User.sortedUserList(:wins)
+      when "total"
+        @sortedUsers = User.sortedUserList(:total)
+      when "percentage"
+        @sortedUsers = User.sortedUserList(:winPercentage)
+    end
     # @sortedUsers = {
-    #   elo: User.sortedEloList,
-    #   wins: User.sortedWinsList,
-    #   total: User.sortedTotalList,
-    #   percentage: User.sortedPercentageList
+    #   elo: User.sortedUserList(:elo),
+    #   wins: User.sortedUserList(:wins),
+    #   total: User.sortedUserList(:total),
+    #   percentage: User.sortedUserList(:winPercentage)
     # }
-    @sortedUsers = {
-      elo: User.sortedUserList(:elo),
-      wins: User.sortedUserList(:wins),
-      total: User.sortedUserList(:total),
-      percentage: User.sortedUserList(:winPercentage)
-    }
     render json: @sortedUsers, status: :accepted
   end
 
